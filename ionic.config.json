@@ -1,0 +1,8 @@
+{
+  "name": "SGSA",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "e28a4541"
+}

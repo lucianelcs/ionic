@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        PUC - SGSA
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <h2 style='text-align: center'>Login</h2>
+    <ion-item>
+      <ion-label stacked>Usuário: </ion-label>
+      <ion-input id='username' type='text' #usuario placeholder="Usuário" required ></ion-input>
+    </ion-item>
+      <ion-item>
+      <ion-label stacked>Senha: </ion-label>
+      <ion-input id='userpassword' type='password' #senha placeholder="Senha" required  ></ion-input>
+    </ion-item>
+    <button ion-button block (click)= 'entrar()'>Logar</button>
+  </ion-content>
+  

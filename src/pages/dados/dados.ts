@@ -36,4 +36,10 @@ export class DadosPage {
   openNotasPage(){
     this.navCtrl.push(NotasPage);
   };
+
+  logout(){
+    this.navCtrl.pop();
+  }
+    
+  
 }

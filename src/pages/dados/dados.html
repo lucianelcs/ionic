@@ -1,20 +1,18 @@
 <ion-header>
-
+    
   <ion-navbar>
     <ion-title>PUC - SGSA</ion-title>
   </ion-navbar>
 
 </ion-header>
 <ion-content padding>
-    <h2 style='text-align: center'>Início</h2>
+    <h3 style='text-align: center'>Bem vindo {{this.username}}ao Portal de Alunos!</h3>
   <ion-item>
-    <p>Bem vindo {{usuario}}ao Portal dos Alunos!</p>
+    <p></p>
   </ion-item>
   <ion-content>
       <ion-list>
-        <button ion-item (click)="openAlunosInfoPage()">
-          Informações
-        </button>
+    <ion-img id="logo" src="./assets/imgs/puc.jpg"></ion-img>        
         <button ion-item (click)="openCursosPage()">
           Cursos
         </button>
@@ -25,6 +23,8 @@
           Notas
         </button>
       </ion-list>
+
+      <button ion-button block (click)='logout()'>Sair</button>
     </ion-content>
 
 </ion-content>

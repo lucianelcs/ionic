@@ -1,6 +1,60 @@
-page-home {
-    background: url(“/assets/imgs/puc.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+page-home { 
+     
+    
 }
+
+logo{
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    display: block;
+    align-content: right;
+  }
+h1{
+    text-align: center;
+    color: #6B8E23; 
+    font-weight: bold; 
+}
+
+
+button.button-md button-default button-default-md button-block button-block-md{
+    background-color: #6B8E23;
+}
+
+.toast-message{
+    background-color: red;
+}
+
+.button-block-md{
+    background-color: #6B8E23;
+    margin: 5.4rem 0.2rem;
+    padding: 4px;
+    border-color: #6B8E23;
+    border-style:  none;   
+}
+
+ion-input, ion-textarea{
+    border-color: #6B8E23;
+    font-style: normal;
+    color: #6B8E23;
+}
+
+.button-md .button-effect {
+    background-color: rgb(255, 255, 255);
+}
+
+.button-effect {
+    transform-origin: center center 0px;
+    position: absolute;
+    z-index: 0;
+    display: none;
+    background-color: rgb(154, 205, 50);
+    opacity: 0.2;
+    transition-timing-function: ease-in-out;
+    pointer-events: none;
+    top: 0px;
+    left: 0px;
+    //border-radius: 50%;
+}
+
+

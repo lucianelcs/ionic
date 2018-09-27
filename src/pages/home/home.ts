@@ -1,6 +1,9 @@
-import { Component , ViewChild} from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
-//import {Md5} from 'ts-md5/dist/md5';
+import { Http, Headers, RequestOptions } from '@angular/http';
+
+
+
 
 import { DadosPage } from '../dados/dados';
 
@@ -9,24 +12,54 @@ import { DadosPage } from '../dados/dados';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  @ViewChild('usuario') email;
+  @ViewChild('usuario') username;
   @ViewChild('senha') password;
 
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public http: Http) {
 
   }
-  entrar(){
-    let toast =this.toastCtrl.create({duration:3000, position: 'bottom'});
+  authenticatorUser() {
+    let toast = this.toastCtrl.create({ duration: 30000, position: 'bottom' });
+    var headers = new Headers();
+    let options = new RequestOptions({ headers: headers });
 
-   // Md5.hashStr(password);
-    if(this.email.value == "luciane" && this.password.value == '123456'){
-      this.navCtrl.push(DadosPage);
-      toast.setMessage('Logado com sucesso!');
-      toast.present();
-      }else{
-        toast.setMessage('Usuário ou senha não encontrado!');
-        toast.present();
-      }
+    let body = {
+      "username": this.username.value,
+      "password": this.password.value
+    }
+
+    this.http.post('http://localhost:8080/authentication', body, options)
+      .subscribe(data => {
+        console.log(data['_body']);
+        this.navCtrl.push(DadosPage);
+        toast.setMessage('Logado com sucesso!');
+      }, error => {
+        //console.log(error);
+        if (body.username == '') {
+          toast.setMessage("Nome é obrigatório!");
+          toast.present();
+        }
+          if (body.password == '') {
+            toast.setMessage("Senha é obrigatório!");
+            toast.present();
+          }else{
+            toast.setMessage("Usuário ou senha inválidos!");
+            toast.present();
+          }
+        
+      });
+
+
+
+    //Md5.hashStr(password);
+    //if(this.email.value == "luciane" && this.password.value == '123456'){
+    // this.navCtrl.push(DadosPage);
+    //  toast.setMessage('Logado com sucesso!');
+    // toast.present();
+    // }else{
+    //  toast.setMessage('Usuário ou senha não encontrado!');
+    //   toast.present();
+    // }
   }
 
 }

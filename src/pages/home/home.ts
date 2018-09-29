@@ -45,18 +45,6 @@ export class HomePage {
           }
         
       });
-
-
-
-    //Md5.hashStr(password);
-    //if(this.email.value == "luciane" && this.password.value == '123456'){
-    // this.navCtrl.push(DadosPage);
-    //  toast.setMessage('Logado com sucesso!');
-    // toast.present();
-    // }else{
-    //  toast.setMessage('Usuário ou senha não encontrado!');
-    //   toast.present();
-    // }
   }
 
 }

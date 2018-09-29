@@ -19,7 +19,7 @@ export class HomePage {
 
   }
   authenticatorUser() {
-    let toast = this.toastCtrl.create({ duration: 30000, position: 'bottom' });
+    let toast = this.toastCtrl.create({ duration: 3000, position: 'bottom' });
     var headers = new Headers();
     let options = new RequestOptions({ headers: headers });
 
